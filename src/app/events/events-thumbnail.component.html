@@ -1,0 +1,20 @@
+<div class="well hoverwell thumbnail" style="min-height: 210px;">
+    <h2>{{currEvent?.name}}</h2>
+
+    <div>Date: {{currEvent?.date}}</div>
+    <div [ngSwitch]="currEvent?.time">
+        Time: {{currEvent?.time}}
+        <span *ngSwitchCase="'8:00 am'">(Early Start)</span>
+        <span *ngSwitchCase="'10:00 am'">(Late Start)</span>
+        <span *ngSwitchDefault>(Normal Start)</span>
+    </div>
+    <div>Price: ${{currEvent?.price}}</div>
+    <div [hidden]="!currEvent?.location">
+        <span>Location: {{currEvent?.location?.address}}</span>
+
+        <span class="pad-left">{{currEvent?.location?.city}}, {{currEvent?.location?.country}}</span>
+    </div>
+    <div *ngIf="currEvent?.onlineUrl">
+        Online URL: {{currEvent?.onlineUrl}}
+    </div>
+</div>
