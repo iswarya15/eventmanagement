@@ -1,4 +1,4 @@
-<div class="well hoverwell thumbnail" style="min-height: 210px;">
+<div class="well hoverwell thumbnail" [routerLink]="['/events',currEvent.id]" style="min-height: 210px;">
     <h2>{{currEvent?.name}}</h2>
 
     <div>Date: {{currEvent?.date}}</div>
