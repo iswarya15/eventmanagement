@@ -12,7 +12,7 @@ import { EventDetailsComponent } from './events/event-details/event-details/even
 import { CreateEventComponent } from './events/create-event/create-event.component';
 import { Error404Component } from './errors/404.component';
 import { EventRouteActivator } from './events/event-details/event-route-activator.service'
-
+import { EventsListResolver } from './events/shared/events-list-resolver.service'
 @NgModule({
   declarations: [
     EventsAppComponent,
@@ -27,7 +27,7 @@ import { EventRouteActivator } from './events/event-details/event-route-activato
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [EventService,ToastrService,EventRouteActivator],
+  providers: [EventService,ToastrService,EventRouteActivator, EventsListResolver],
   bootstrap: [EventsAppComponent]
 })
 export class AppModule { }
